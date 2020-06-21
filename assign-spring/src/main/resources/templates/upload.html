@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Upload Img</title>
+</head>
+<body>
+    <span th:if="${msg}" th:text="${msg}"></span>
+    <span th:if="${img_name}" th:text="${img_name}"></span>
+    <span th:if="${url}" th:text="${url}"></span>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="img">
+        </div>
+        <input type="submit" value="Upload">
+    </form>
+    <img th:if="${img_url}" th:src="${img_url}">
+</body>
+</html>
