@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </array>
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LockApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-qz-yKU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_home_lock_store" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-ku-QjV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3Y-W7-Y6f">
+                                        <rect key="frame" x="295" y="40" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="Tzu-mH-Pp0"/>
+                                            <constraint firstAttribute="height" constant="50" id="oCH-bI-Nhc"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_home_setting"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hff-X8-SBU">
+                                        <rect key="frame" x="30" y="40" width="136" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="fbA-4B-zCQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="gcI-ku-QjV" firstAttribute="top" secondItem="b1V-qz-yKU" secondAttribute="top" id="BQk-v7-fLW"/>
+                                    <constraint firstAttribute="trailing" secondItem="gcI-ku-QjV" secondAttribute="trailing" id="JfU-ni-1Af"/>
+                                    <constraint firstItem="p3Y-W7-Y6f" firstAttribute="top" secondItem="hff-X8-SBU" secondAttribute="top" id="Uwa-qH-ntT"/>
+                                    <constraint firstItem="gcI-ku-QjV" firstAttribute="leading" secondItem="b1V-qz-yKU" secondAttribute="leading" id="WOr-Pg-8jk"/>
+                                    <constraint firstItem="hff-X8-SBU" firstAttribute="top" secondItem="b1V-qz-yKU" secondAttribute="top" constant="40" id="ewA-DT-7QW"/>
+                                    <constraint firstItem="hff-X8-SBU" firstAttribute="leading" secondItem="b1V-qz-yKU" secondAttribute="leading" constant="30" id="prb-bF-Frz"/>
+                                    <constraint firstAttribute="bottom" secondItem="gcI-ku-QjV" secondAttribute="bottom" id="sxE-b2-T0p"/>
+                                    <constraint firstAttribute="trailing" secondItem="p3Y-W7-Y6f" secondAttribute="trailing" constant="32" id="tdZ-9P-3Ev"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6E-hE-ZpC">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-ve-R4t">
+                                        <rect key="frame" x="35" y="30" width="305" height="117"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I4-Ep-grO">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="137"/>
+                                                <state key="normal" image="bg_home_lock_apps"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Apps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs5-XB-zXG">
+                                                <rect key="frame" x="124.5" y="41.5" width="96" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="sgr-v5-A8W"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Bs5-XB-zXG" firstAttribute="centerX" secondItem="1Il-ve-R4t" secondAttribute="centerX" constant="20" id="Dbq-q3-Vsb"/>
+                                            <constraint firstItem="8I4-Ep-grO" firstAttribute="top" secondItem="1Il-ve-R4t" secondAttribute="top" id="LJ9-fY-TyB"/>
+                                            <constraint firstAttribute="trailing" secondItem="8I4-Ep-grO" secondAttribute="trailing" id="tf7-Rf-h69"/>
+                                            <constraint firstItem="Bs5-XB-zXG" firstAttribute="centerY" secondItem="8I4-Ep-grO" secondAttribute="centerY" constant="-13" id="uuy-NO-uUi"/>
+                                            <constraint firstItem="8I4-Ep-grO" firstAttribute="leading" secondItem="1Il-ve-R4t" secondAttribute="leading" id="vFD-g0-2Ny"/>
+                                            <constraint firstAttribute="bottom" secondItem="8I4-Ep-grO" secondAttribute="bottom" constant="-20" id="zt2-XR-zJg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8d9-NQ-KoF">
+                                        <rect key="frame" x="35" y="167" width="305" height="116.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kw-9f-Rkp">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="136.5"/>
+                                                <state key="normal" image="bg_home_lock_album"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Album" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1l-Z3-C6V">
+                                                <rect key="frame" x="124" y="41" width="107" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="uu6-gf-kjD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0kw-9f-Rkp" secondAttribute="bottom" constant="-20" id="8G2-gX-WeM"/>
+                                            <constraint firstItem="F1l-Z3-C6V" firstAttribute="centerY" secondItem="0kw-9f-Rkp" secondAttribute="centerY" constant="-13" id="GGw-rb-lSG"/>
+                                            <constraint firstItem="F1l-Z3-C6V" firstAttribute="centerX" secondItem="8d9-NQ-KoF" secondAttribute="centerX" constant="25" id="PNS-01-fjI"/>
+                                            <constraint firstItem="0kw-9f-Rkp" firstAttribute="top" secondItem="8d9-NQ-KoF" secondAttribute="top" id="W1t-qI-8bo"/>
+                                            <constraint firstAttribute="trailing" secondItem="0kw-9f-Rkp" secondAttribute="trailing" id="hbo-Tk-Uph"/>
+                                            <constraint firstItem="0kw-9f-Rkp" firstAttribute="leading" secondItem="8d9-NQ-KoF" secondAttribute="leading" id="lyW-LI-QcR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-Rf-obb">
+                                        <rect key="frame" x="35" y="303.5" width="305" height="117"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vci-Ef-V4S">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="137"/>
+                                                <state key="normal" image="bg_home_lock_contact"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q20-eC-ZOh">
+                                                <rect key="frame" x="123.5" y="41.5" width="120.5" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="p3J-ru-GQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="vci-Ef-V4S" firstAttribute="top" secondItem="6pZ-Rf-obb" secondAttribute="top" id="1Ed-Js-Fyr"/>
+                                            <constraint firstAttribute="bottom" secondItem="vci-Ef-V4S" secondAttribute="bottom" constant="-20" id="fX1-QJ-a0w"/>
+                                            <constraint firstItem="vci-Ef-V4S" firstAttribute="leading" secondItem="6pZ-Rf-obb" secondAttribute="leading" id="jH3-ys-RZa"/>
+                                            <constraint firstItem="q20-eC-ZOh" firstAttribute="centerX" secondItem="6pZ-Rf-obb" secondAttribute="centerX" constant="31" id="lvh-xb-jiJ"/>
+                                            <constraint firstItem="q20-eC-ZOh" firstAttribute="centerY" secondItem="vci-Ef-V4S" secondAttribute="centerY" constant="-13" id="mbC-2J-q2v"/>
+                                            <constraint firstAttribute="trailing" secondItem="vci-Ef-V4S" secondAttribute="trailing" id="w4j-aa-cup"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1Il-ve-R4t" secondAttribute="trailing" constant="35" id="KYO-O7-UE4"/>
+                                    <constraint firstItem="1Il-ve-R4t" firstAttribute="top" secondItem="Q6E-hE-ZpC" secondAttribute="top" constant="30" id="NII-nn-ZNi"/>
+                                    <constraint firstItem="6pZ-Rf-obb" firstAttribute="trailing" secondItem="8d9-NQ-KoF" secondAttribute="trailing" id="TsA-WD-wl5"/>
+                                    <constraint firstItem="6pZ-Rf-obb" firstAttribute="top" secondItem="8d9-NQ-KoF" secondAttribute="bottom" constant="20" id="X0b-M1-2FC"/>
+                                    <constraint firstItem="6pZ-Rf-obb" firstAttribute="height" secondItem="8d9-NQ-KoF" secondAttribute="height" id="eFU-0r-ekQ"/>
+                                    <constraint firstItem="8d9-NQ-KoF" firstAttribute="leading" secondItem="1Il-ve-R4t" secondAttribute="leading" id="l0A-Od-1wl"/>
+                                    <constraint firstItem="1Il-ve-R4t" firstAttribute="leading" secondItem="Q6E-hE-ZpC" secondAttribute="leading" constant="35" id="ljE-Zl-BK8"/>
+                                    <constraint firstItem="8d9-NQ-KoF" firstAttribute="trailing" secondItem="1Il-ve-R4t" secondAttribute="trailing" id="muC-dG-PeD"/>
+                                    <constraint firstItem="8d9-NQ-KoF" firstAttribute="height" secondItem="1Il-ve-R4t" secondAttribute="height" id="rpO-St-M3z"/>
+                                    <constraint firstItem="1Il-ve-R4t" firstAttribute="height" secondItem="Q6E-hE-ZpC" secondAttribute="height" multiplier="0.25" id="sv1-Hc-F80"/>
+                                    <constraint firstItem="6pZ-Rf-obb" firstAttribute="leading" secondItem="8d9-NQ-KoF" secondAttribute="leading" id="ubW-aa-uqI"/>
+                                    <constraint firstItem="8d9-NQ-KoF" firstAttribute="top" secondItem="1Il-ve-R4t" secondAttribute="bottom" constant="20" id="zxD-a2-QVg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b1V-qz-yKU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5tc-8g-A35"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q6E-hE-ZpC" secondAttribute="bottom" id="Eny-Wv-pCi"/>
+                            <constraint firstItem="Q6E-hE-ZpC" firstAttribute="top" secondItem="b1V-qz-yKU" secondAttribute="bottom" id="HeF-Le-rgn"/>
+                            <constraint firstItem="Q6E-hE-ZpC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1d-ub-bqk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q6E-hE-ZpC" secondAttribute="trailing" id="N0T-Ym-cqK"/>
+                            <constraint firstItem="b1V-qz-yKU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bvf-0r-nfU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b1V-qz-yKU" secondAttribute="trailing" id="nT9-Hs-eyF"/>
+                            <constraint firstItem="b1V-qz-yKU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="zyf-Dg-WrM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4q5-1h-rzL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="66.11694152923539"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_home_lock_store" width="375" height="178"/>
+        <image name="bg_home_lock_album" width="315" height="143"/>
+        <image name="bg_home_lock_apps" width="315" height="143"/>
+        <image name="bg_home_lock_contact" width="315" height="143"/>
+        <image name="ic_home_setting" width="48.5" height="51.5"/>
+    </resources>
+</document>

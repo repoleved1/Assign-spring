@@ -1,0 +1,10 @@
+
+
+"app_name" = "Lock App";
+"txt_no_item_selector" = "Please selecte item.";
+"txt_delete_selector" = "Are you sure you want to delete?";
+"txt_share" = "Share";
+"txt_delete" = "Delete";
+"txt_cancel" = "Cancel";
+"txt_ok" = "OK";
+"txt_no_data" = "Empty data";
