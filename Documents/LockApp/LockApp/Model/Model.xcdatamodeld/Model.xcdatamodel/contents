@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Album" representedClassName="Album" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Gallery" representedClassName="Gallery" syncable="YES" codeGenerationType="class">
-        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idAlbum" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isNotes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="isVideo" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="idAlbum" optional="YES" attributeType="String"/>
+        <attribute name="isNotes" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isVideo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
-        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dateCreate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="idAlbum" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="noteId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="dateCreate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="idAlbum" optional="YES" attributeType="String"/>
+        <attribute name="noteId" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
-        <attribute name="aID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="appID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="buildID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="developer" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="trackViewUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="appID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="buildID" optional="YES" attributeType="String"/>
+        <attribute name="developer" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="touchID" optional="YES" attributeType="String"/>
+        <attribute name="trackViewUrl" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="website" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Album" positionX="-171" positionY="459" width="128" height="75"/>
         <element name="Gallery" positionX="-189" positionY="351" width="128" height="120"/>
         <element name="Note" positionX="-180" positionY="423" width="128" height="135"/>
-        <element name="Store" positionX="-171" positionY="432" width="128" height="210"/>
+        <element name="Store" positionX="-171" positionY="432" width="128" height="223"/>
     </elements>
 </model>

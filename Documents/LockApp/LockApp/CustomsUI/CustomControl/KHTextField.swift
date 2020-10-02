@@ -11,6 +11,23 @@ private var kAssociationKeyMaxLength: Int = 0
 //@IBDesignable
 class KHTextField: UITextField {
     
+    let placeholderLabel: UILabel = UILabel()
+
+    override var font: UIFont! {
+           didSet {
+               if placeholderFont == nil {
+                   placeholderLabel.font = font
+               }
+           }
+       }
+       
+       var placeholderFont: UIFont? {
+           didSet {
+               let font = (placeholderFont != nil) ? placeholderFont : self.font
+               placeholderLabel.font = font
+           }
+       }
+    
     @IBInspectable var placeHolderColor: UIColor = .gray {
         didSet {
             attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder!.localized : "", attributes:[NSAttributedString.Key.foregroundColor: placeHolderColor])

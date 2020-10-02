@@ -35,7 +35,7 @@ class ShareData:NSObject {
     var saveFavorite = [ItemFavorites]()
     var arrShowStared = [ArrayFavorite]()
     var detailContact = [CNContact]()
-    var nameImageTick = "ic_tick"
+    var nameImageTick = "ic_select"
     var contentFileUpload = ""
     var indexTable = 0
     var duplicateContact = [String: [CNContact]]()
@@ -173,6 +173,7 @@ class GetContact {
             print(err)
         }
         
+
     }
 }
 
@@ -199,7 +200,7 @@ class DatabaseService {
     
     func add(_ obj: Object ) {
         write {
-            self.realm.add(obj, update: .all)
+            self.realm.add(obj)
         }
     }
     

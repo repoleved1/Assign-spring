@@ -66,7 +66,7 @@ extension ImageVideoModelView: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isMultiSelect {
             let cell = collectionView.cellForItem(at: indexPath) as? GalleryCollectionViewCell
-            cell?.imageSelect.image = UIImage(named: "ic_select")
+            cell?.imageSelect.image = UIImage(named: "ic_selected")
             handleMultilSelectRow?(indexPath.row)
         }else{
             handleSelectRow?(indexPath.row)
@@ -76,7 +76,7 @@ extension ImageVideoModelView: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if isMultiSelect {
             let cell = collectionView.cellForItem(at: indexPath) as? GalleryCollectionViewCell
-            cell?.imageSelect.image = UIImage(named: "ic_check2_off")
+            cell?.imageSelect.image = UIImage(named: "ic_select")
             handleMultilDeSelectRow?(indexPath.row)
         }else{
             handleDeSelectRow?(indexPath.row)

@@ -59,13 +59,13 @@
                     <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lmU-BA-eMA">
-                            <rect key="frame" x="25" y="40" width="350" height="527"/>
+                            <rect key="frame" x="0.0" y="40" width="375" height="527"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" red="0.96862745098039216" green="0.93725490196078431" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="lmU-BA-eMA" firstAttribute="leading" secondItem="SjA-6Y-ZXj" secondAttribute="leading" constant="25" id="0Iw-cf-IwS"/>
+                        <constraint firstItem="lmU-BA-eMA" firstAttribute="leading" secondItem="SjA-6Y-ZXj" secondAttribute="leading" id="0Iw-cf-IwS"/>
                         <constraint firstItem="lmU-BA-eMA" firstAttribute="top" secondItem="SjA-6Y-ZXj" secondAttribute="top" constant="40" id="UUd-H9-dhZ"/>
                         <constraint firstAttribute="trailing" secondItem="lmU-BA-eMA" secondAttribute="trailing" id="Ubh-nn-cWw"/>
                         <constraint firstAttribute="bottom" secondItem="lmU-BA-eMA" secondAttribute="bottom" id="swe-B3-nKx"/>

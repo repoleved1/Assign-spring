@@ -8,8 +8,9 @@
 
 import UIKit
 import Contacts
+import MessageUI
 
-class HomeViewController: BaseVC, SetTingViewControllerDelegate {
+class HomeViewController: BaseVC, SetTingViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     let transiton = SlideInTransition()
     
@@ -37,12 +38,16 @@ class HomeViewController: BaseVC, SetTingViewControllerDelegate {
         navigationController?.pushViewController(lockAppVC, animated: true)
     }
     
-    @IBAction func openLockAlbum(_ sender: Any) {
+    @IBAction func openLockAlbum(_ sender: UIButton) {
         let lockAlbumsVC = LALockAlbumViewController()
         navigationController?.pushViewController(lockAlbumsVC, animated: true)
     }
     
-    @IBAction func openLockContact(_ sender: Any) {
+    @IBAction func openLockContact(_ sender: UIButton) {
+        let lockContactVC = LALockContactViewController()
+        navigationController?.pushViewController(lockContactVC, animated: true)
+//        let lockAlbumsVC = LALockAlbumViewController()
+//        navigationController?.pushViewController(lockAlbumsVC, animated: true)
     }
     
     func openCellSlideRightMenu(index: Int) {
@@ -52,6 +57,35 @@ class HomeViewController: BaseVC, SetTingViewControllerDelegate {
             TAppDelegate.initCode(type: 1)
             break
         case 1:
+            self.dismiss(animated: false, completion: nil)
+            break
+        case 2:
+            self.dismiss(animated: false, completion: nil)
+            let privacyVC = PrivacyViewController()
+            navigationController?.pushViewController(privacyVC, animated: true)
+            break
+        case 3:
+            self.dismiss(animated: false, completion: nil)
+            break
+        case 4:
+            self.dismiss(animated: false, completion: nil)
+            if MFMailComposeViewController.canSendMail() {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["tueanhoang.devios2011@gmail.com"])
+                mail.setSubject("Regarding")
+                
+                present(mail, animated: true)
+            } else {
+                Common.showAlert("Mail services are not available")
+            }
+            break
+        case 5:
+            self.dismiss(animated: false, completion: nil)
+            let text = [ "http://itunes.apple.com/app/id" + appId ]
+            let activityViewController = UIActivityViewController(activityItems: text , applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
             break
         default:
             break

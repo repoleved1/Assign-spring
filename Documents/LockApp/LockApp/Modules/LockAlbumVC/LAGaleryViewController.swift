@@ -11,11 +11,18 @@ import Gallery
 import Photos
 
 class LAGaleryViewController: BaseVC {
-
+    
     // MARK: - IBOutlet
+    @IBOutlet weak var imageNo: UIImageView!
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var labelNo: UILabel!
+    @IBOutlet weak var viewLayout: UIView!
     @IBOutlet weak var navi: NavigationView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var buttonAdd: UIButton!
+    @IBOutlet weak var btDelete: UIButton!
+    @IBOutlet weak var btSelect: UIButton!
+    @IBOutlet weak var btShare: UIButton!
     
     let viewModel: ImageVideoModelView = ImageVideoModelView()
     var isVideos = false
@@ -33,27 +40,49 @@ class LAGaleryViewController: BaseVC {
         initData()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if arrData.count != 0 {
+            imageNo.isHidden = true
+            labelNo.isHidden = true
+        } else {
+            imageNo.isHidden = false
+            labelNo.isHidden = false
+        }
+    }
+    
+    @IBAction func share(_ sender: Any) {
+    }
+    
     @IBAction func addMedia(_ sender: Any) {
         self.gallery = GalleryController()
         Config.Camera.recordLocation = true
         self.gallery.delegate = self
-            
+        
         let alert = UIAlertController(title: "Select Media", message: "Please Select an Option", preferredStyle: .actionSheet)
-
-        alert.addAction(UIAlertAction(title: "Select Video in Library", style: .default , handler:{ (UIAlertAction)in
+        
+        alert.addAction(UIAlertAction(title: "Select Media in Library", style: .default , handler:{ (UIAlertAction)in
             print("User click Edit button")
-            Config.tabsToShow = [.imageTab,  .cameraTab, .videoTab]
+            Config.tabsToShow = [.imageTab, .videoTab]
             self.present(self.gallery, animated: true, completion: nil)
         }))
         
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: "Cancle", style: .cancel, handler:{ (UIAlertAction)in
             print("User click Dismiss button")
         }))
-
+        
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func selected(_ sender: Any) {
+        self.selected()
     }
     
     func initData() {
@@ -62,24 +91,28 @@ class LAGaleryViewController: BaseVC {
         viewModel.isVideo = isVideos
         viewModel.arrData = self.arrData
         collectionView.reloadData()
+        imageNo.isHidden = true
+        labelNo.isHidden = true
     }
     
     func setupUI() {
-        navi.title = ""
-        navi.handleBack = {
-            self.navigationController?.popViewController(animated: true)
-        }
+        lbTitle.text = objGallery.name.count == 0 ? "No title" : objGallery.name
+    
+        btShare.isHidden = true
+        btDelete.isHidden = true
+        btShare.addTarget(self, action: #selector(shareSelector), for: .touchUpInside)
+        btDelete.addTarget(self, action: #selector(deleteSelector), for: .touchUpInside)
         self.collectionView.register(GalleryCollectionViewCell.self)
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
         
         let lpgr : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-            
+        
         lpgr.minimumPressDuration = 0.3
         lpgr.delegate = self
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
-
+        
         
         viewModel.handleSelectRow = { (index) in
             self.goToPreview(index)
@@ -92,6 +125,48 @@ class LAGaleryViewController: BaseVC {
             if let index = self.arrSelected.firstIndex(of: self.arrData[index]) {
                 self.arrSelected.remove(at: index)
             }
+        }
+        
+        //View Layout
+        viewLayout.clipsToBounds = true
+        viewLayout.layer.cornerRadius = 50
+        viewLayout.layer.maskedCorners = [.layerMinXMinYCorner]
+    }
+    
+    @objc func deleteSelector() {
+        if arrSelected.count == 0 {
+            Common.showAlert("No item in selected")
+        }else{
+            _ = UIAlertController.present(style: .alert, title: "app_name".localized, message: "txt_delete_selector".localized, attributedActionTitles: [("txt_ok".localized, .default), ("txt_cancel".localized, .cancel)], handler: { (action) in
+                if action.title == "txt_ok".localized {
+                    for obj in self.arrSelected {
+                        let url = FilePaths.filePaths.path+obj.fileName
+                        self.deleteFile(url: URL(fileURLWithPath: url))
+                        obj.deleteGallery()
+                    }
+                    self.arrSelected.removeAll()
+                    self.initData()
+                }
+            })
+        }
+        
+    }
+    
+    @objc func shareSelector() {
+        if self.arrSelected.count > 0 {
+            
+            var shareAll = [] as [Any]
+            
+            for obj in self.arrSelected {
+                let filePath = FilePaths.filePaths.path+obj.fileName
+                let file = NSURL(fileURLWithPath: filePath)
+                shareAll.append(file)
+            }
+            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+        }else{
+            Common.showAlert("No item in selected")
         }
     }
     
@@ -119,7 +194,6 @@ class LAGaleryViewController: BaseVC {
     }
     
     @objc func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer){
-        
         if (gestureRecognizer.state != .ended){
             return
         }
@@ -133,35 +207,26 @@ class LAGaleryViewController: BaseVC {
     
     func selected() {
         self.viewModel.isMultiSelect = !self.viewModel.isMultiSelect
-        self.navi.hasLeft = self.isShowViewAction
         if self.isShowViewAction {
-            self.navi.imgActionRight3.isHidden = false
-            self.navi.btRight3.setTitle("", for: .normal)
-            self.navi.title = objGallery.name.count == 0 ? "No title" : objGallery.name
+            self.btSelect.setTitle("Select", for: .normal)
             self.buttonAdd.isHidden = false
         }else{
-            self.navi.imgActionRight3.isHidden = true
-            self.navi.btRight3.setTitle("Done", for: .normal)
-            self.navi.title = "Select Gallery"
+            self.btSelect.setTitle("Done", for: .normal)
             self.buttonAdd.isHidden = true
         }
-        
+        self.btShare.isHidden = self.isShowViewAction
+        self.btDelete.isHidden = self.isShowViewAction
         self.collectionView.allowsMultipleSelection = !self.isShowViewAction
+        self.buttonAdd.isHidden = !self.isShowViewAction
         self.isShowViewAction = !self.isShowViewAction
         self.collectionView.reloadData()
     }
-
+    
 }
 
 extension LAGaleryViewController: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         controller.dismiss(animated: true) {
-//            if images.count > 0 {
-//                for img in images {
-//                    self.saveImageInDocsDir(self.idAlbum, img.asset)
-//                }
-//                self.initData()
-//            }
             Image.resolve(images: images, completion: { (images) in
                 for img in images {
                     if let imgs = img {
@@ -224,3 +289,4 @@ extension LAGaleryViewController: UIImagePickerControllerDelegate, UINavigationC
 extension LAGaleryViewController: UIGestureRecognizerDelegate {
     
 }
+

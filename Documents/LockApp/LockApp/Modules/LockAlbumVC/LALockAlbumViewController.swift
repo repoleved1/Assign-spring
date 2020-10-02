@@ -27,6 +27,13 @@ class LALockAlbumViewController: BaseVC {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           initData()
+           if PaymentManager.shared.isPurchaseRemoveAds() {
+           }
+       }
+    
     
     @IBAction func back(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -65,30 +72,6 @@ extension LALockAlbumViewController {
         navi.handleBack = {
             self.navigationController?.popViewController(animated: true)
         }
-//        navi.handleActionRight = { (tag) in
-//            if PaymentManager.shared.isPurchaseAlbum() {
-//                let contentVC = TitleAlbumViewController.init(nibName: "TitleAlbumViewController", bundle: nil)
-//
-//                let popupVC = PopupViewController(contentController: contentVC, popupWidth: ScreenSize.SCREEN_WIDTH, popupHeight: ScreenSize.SCREEN_HEIGHT)
-//                contentVC.handleDismissVC = {
-//                    popupVC.dismiss(animated: true, completion: {
-//
-//                    })
-//                }
-//                contentVC.handleChangerText = { (text) in
-//                    print("The new number is \(text)")
-//                    let obj = AlbumObj()
-//                    obj.name = text
-//                    obj.saveAlbumList(true)
-//                    self.initData()
-//                }
-//
-//                self.present(popupVC, animated: true)
-//            }else{
-//                //                let viewController = StoreViewController.init(nibName: String.init(describing: StoreViewController.self).nibWithNameiPad(), bundle: nil)
-//                //                self.present(viewController, animated: true, completion: nil)
-//            }
-//        }
         
         // View Layout
         viewLayout.clipsToBounds = true
@@ -177,7 +160,7 @@ extension LALockAlbumViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = LAGaleryViewController.init(nibName: "GalleryVC", bundle: nil)
+        let vc = LAGaleryViewController.init(nibName: "LAGaleryViewController", bundle: nil)
         vc.idAlbum = arr[indexPath.item].id
         vc.objGallery = arr[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
