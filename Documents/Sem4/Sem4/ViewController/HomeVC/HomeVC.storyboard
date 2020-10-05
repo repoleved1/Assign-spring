@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Group-->
+        <scene sceneID="cZF-KN-7bn">
+            <objects>
+                <viewController id="wS5-IK-XHr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vu-kg-09S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="r32-z6-d1t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Group" image="dashboard" id="fJp-Db-EO5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2h-BU-NoJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="861"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="VUv-oX-lmf">
+            <objects>
+                <viewController id="7ue-eL-ocK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDN-jf-nyV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="U6T-3e-T0l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="clock" id="ePj-iH-Oqh" customClass="CBTabBarItem" customModule="Sem4">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.61568627450000002" green="0.28627450980000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chB-55-Lwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="374"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="DCX-8p-BhV">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="GSB-Qc-Ssz" customClass="HomeVC" customModule="Sem4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibb-jL-Me5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-7f-CYf">
+                                <rect key="frame" x="20" y="413.5" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bNC-w6-0gd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.72156862749999995" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dKC-V6-zB1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dKC-V6-zB1" firstAttribute="trailing" secondItem="ASd-7f-CYf" secondAttribute="trailing" constant="20" id="6e2-f9-uDh"/>
+                            <constraint firstItem="ASd-7f-CYf" firstAttribute="centerX" secondItem="dKC-V6-zB1" secondAttribute="centerX" id="DTI-cD-kSN"/>
+                            <constraint firstItem="ASd-7f-CYf" firstAttribute="centerY" secondItem="dKC-V6-zB1" secondAttribute="centerY" id="Wnd-Ld-p3t"/>
+                            <constraint firstItem="ASd-7f-CYf" firstAttribute="leading" secondItem="dKC-V6-zB1" secondAttribute="leading" constant="20" id="lne-aP-qXh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="dashboard" id="KLx-no-XKU" customClass="CBTabBarItem" customModule="Sem4">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.96862745098039216" green="0.72156862745098038" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bib-yL-NqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-234"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="XMr-gM-SJL">
+            <objects>
+                <viewController id="bP3-6U-Klm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l1n-ff-nof">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oci-4O-V6v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="ic_account_tabbar" id="PG1-31-6LD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94k-Wp-MzN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-319" y="-613"/>
+        </scene>
+        <!--Bubble Tab Bar Controller-->
+        <scene sceneID="r9s-9f-pSH">
+            <objects>
+                <tabBarController storyboardIdentifier="BubbleTabBarController" id="4hi-WN-wVc" customClass="BubbleTabBarController" customModule="Sem4" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="77q-mT-QST">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GSB-Qc-Ssz" kind="relationship" relationship="viewControllers" id="f3H-Jc-H5F"/>
+                        <segue destination="7ue-eL-ocK" kind="relationship" relationship="viewControllers" id="KuN-aa-eKE"/>
+                        <segue destination="bP3-6U-Klm" kind="relationship" relationship="viewControllers" id="It7-hY-1rx"/>
+                        <segue destination="wS5-IK-XHr" kind="relationship" relationship="viewControllers" id="SUw-L2-4PL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2c-o4-f7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock" width="20" height="19"/>
+        <image name="dashboard" width="14" height="13"/>
+        <image name="ic_account_tabbar" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

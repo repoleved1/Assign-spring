@@ -1,0 +1,6 @@
+framework module Pods_Sem4Tests {
+  umbrella header "Pods-Sem4Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
