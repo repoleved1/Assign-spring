@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Sem4' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Sem4
+  pod 'Alamofire'
+  pod 'AnimatedField'
+
+  target 'Sem4Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Sem4UITests' do
+    # Pods for testing
+  end
+
+end
