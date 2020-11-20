@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SantaCall' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SantaCall
+  pod 'UIColor_Hex_Swift'
+  pod 'RealmSwift', '3.20.0'
+  pod 'Toast-Swift'
+  pod 'MagicalRecord'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SwipeCellKit'
+  pod 'MASegmentedControl'
+  pod 'DZNEmptyDataSet'
+  pod 'FBAudienceNetwork'
+  pod 'FTPopOverMenu_Swift'
+  pod 'SwipeCellKit'
+  pod  "SoundWave"
+  pod 'IQAudioRecorderController'
+  pod 'MBProgressHUD'
+
+end
